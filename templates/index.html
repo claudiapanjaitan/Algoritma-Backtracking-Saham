@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Portfolio Optimization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 5px 10px;
+            border-radius: 3px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .portfolio-img {
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        }
+    </style>    
+</head>
+<body>
+    <h1>Optimisasi Portofolio Saham</h1>
+    <form method="POST" action="/">
+        <label for="max_price">Masukkan batasan jumlah total harga saham</label>
+        <input type="text" id="max_price" name="max_price" required>
+        <input type="submit" value="Submit">
+    </form>
+    <div class="result">
+        {{ result | safe }}
+    </div>
+    <div>
+    
+    
+    <h2 style="center">Visualisasi Portfolio:</h2>
+    <img class="portfolio-img" src="data:image/png;base64,{{ img_data }}" alt="Portfolio">
+</body>
+</html>
